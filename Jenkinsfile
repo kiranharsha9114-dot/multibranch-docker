@@ -12,15 +12,7 @@ pipeline {
                 sh 'docker tag image1 kiranreddy678/sravanthi:bank'
             }
         }
-        stage('Push') {
-            steps {
-                script {
-                    withDockerRegistry(credentialsId: 'dockerhub') {
-                        sh 'docker push kiranreddy678/sravanthi:bank'
-                    }
-                }
-            }
-        }
+        
         
         stage ("Deploy") {
             steps {
